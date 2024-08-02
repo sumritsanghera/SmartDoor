@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../hal/include/hal/neopixel.h
+stdint.h
+-
+
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/pru.h
+
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/shared_data_struct.h
+stdbool.h
+-
+stdint.h
+-
+
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/utils.h
+
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/neopixel.c
+stdio.h
+-
+stdbool.h
+-
+stdint.h
+-
+pthread.h
+-
+stdlib.h
+-
+hal/neopixel.h
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/hal/neopixel.h
+../../app/include/utils.h
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/utils.h
+../../app/include/pru.h
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/pru.h
+../../app/include/shared_data_struct.h
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include/shared_data_struct.h
+

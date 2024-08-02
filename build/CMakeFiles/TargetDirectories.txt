@@ -1,0 +1,11 @@
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/CMakeFiles/rebuild_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/CMakeFiles/edit_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal/CMakeFiles/rebuild_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal/CMakeFiles/edit_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal/CMakeFiles/hal.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app/CMakeFiles/rebuild_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app/CMakeFiles/edit_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app/CMakeFiles/embedoors.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/pru-embedoors/CMakeFiles/rebuild_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/pru-embedoors/CMakeFiles/edit_cache.dir
+/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/pru-embedoors/CMakeFiles/my_custom_target_that_always_runs.dir

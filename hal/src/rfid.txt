@@ -1,0 +1,200 @@
+// RFID module written by Steven
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <getopt.h> //TODO not sure if needed
+#include <stdbool.h>
+#include <linux/spi/spidev.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <string.h>
+#include <stdint.h>
+#include <time.h> // nanosleep
+
+#include "hal/rfid.h"
+#include "../../app/include/utils.h" // TODO fix relative path
+
+#define SPI_MODE_DEFAULT 0
+#define SPEED_HZ_DEFAULT 500000 //TODO remove
+#define RFID_RW_BYTES 2
+
+static bool spi_device_opened = false;
+static bool spi_init = false;
+static int spiFileDesc;
+static int spiMode = 0;
+static char* global_device;
+
+/* Function prototypes */
+static int rfid_spi_init(char* device);
+static int rfid_spi_transfer(uint8_t *sendBuf, uint8_t *recvBuf, int len);
+static void rfid_write(uint8_t addr, uint8_t data);
+static void rfid_reset_device();
+
+// Blue RFID tag
+//  23b827f7
+//  00100011101110000010011111110111
+//  599271415
+
+// MIFARE card
+//  563bdead
+//  01010110001110111101111010101101
+//  1446764205
+
+/* Initialize the RFID module */
+void rfid_init(void) {
+
+    int spi_init = rfid_spi_init(SPI0);
+    printf("spi_init() return %d\n", spi_init);
+
+    return;
+}
+
+
+/* Initialize SPI */
+static int rfid_spi_init(char* device) {
+
+    // First, open SPI device
+    printf("Opening SPI device...\n");
+    spiFileDesc = open(device, O_RDWR);
+    if (spiFileDesc < 0) {
+        printf("ERROR rfid_spi_init() : Cannot open device '%s'\n", device);
+    } else {
+        spi_device_opened = true;
+    }
+
+    // Set the SPI mode
+    spiMode = 0;
+    int ret = ioctl(spiFileDesc, SPI_IOC_RD_MODE, &spiMode);
+    if (ret == -1) {
+        printf("ERROR rfid_spi_init() : Can't get SPI mode\n");
+    } else {
+        spi_init = true;
+    }
+
+    // Set SPI device
+    global_device = device;
+
+    printf("Set up SPI device '%s' with mode %d\n", device, spiMode); //TODO remove
+
+    // Return file descriptor
+    return spiFileDesc;
+}
+
+
+/* This was mostly taken from the SPI guide (which also cites an original source) */
+static int rfid_spi_transfer(uint8_t *sendBuf, uint8_t *recvBuf, int len) {
+
+    // Check spiFileDesc
+    if (spiFileDesc < 0) {
+        printf("rfid_spi_transfer() ERROR: SPI device not opened\n");
+        return -1;
+    }
+
+    struct spi_ioc_transfer transfer;
+    memset(&transfer, 0, sizeof(transfer));
+
+    transfer.tx_buf = (unsigned long)sendBuf;
+    transfer.rx_buf = (unsigned long)recvBuf;
+    transfer.len = len;
+
+    const int NUM_TRANSFERS = 1;
+    int status = ioctl(spiFileDesc, SPI_IOC_MESSAGE(NUM_TRANSFERS), &transfer);
+    if (status < 0) {
+        printf("rfid_spi_transfer() ERROR: SPI transfer failed\n");
+    }
+
+    return status;
+}
+
+
+/* This was mostly taken from the SPI guide (which also cites an original source) */
+static void rfid_write(uint8_t addr, uint8_t data) {
+
+    // Send buffer
+    uint8_t sendBuf[RFID_RW_BYTES];
+    sendBuf[0] = (addr << 1);
+    sendBuf[1] = data;
+
+    // Receive buffer
+    uint8_t recvBuf[RFID_RW_BYTES] = {0};
+
+    // Execute transfer
+    rfid_spi_transfer(sendBuf, recvBuf, RFID_RW_BYTES);
+
+    return;
+}
+
+
+/* This was mostly taken from the SPI guide (which also cites an original source) */
+static uint8_t rfid_read(uint8_t addr) {
+
+    // Send buffer (signals start read)
+    uint8_t sendBuf[RFID_RW_BYTES];
+    sendBuf[0] = (0x80 | (addr << 1));
+    sendBuf[1] = 0x00; // 0x00 signals "stop reading"
+
+    // Receive buffer
+    uint8_t recvBuf[RFID_RW_BYTES] = {0};
+
+    // Begin transfer
+    rfid_spi_transfer(sendBuf, recvBuf, RFID_RW_BYTES);
+
+    // Return the received data
+    return recvBuf[1];
+
+}
+
+void rfid_get_uid(uint8_t* recvBuf) {
+
+    // Check SPI device initialized
+    if (!spi_device_opened) {
+        printf("rfid_get_uid() ERROR: SPI device not opened\n");
+        return;
+    }
+
+    // First, reset device
+    rfid_reset_device();
+
+    // Turn on antenna
+    // uint8_t val = rfid_read(TX_CONTROL_REG);
+    // if ((val & 0x03) != 0x03) {
+        // rfid_write(TX_CONTROL_REG, val | 0x03);
+    // }
+
+    // Send REQA command
+    
+
+
+
+
+
+    
+
+    return;
+}
+
+static void rfid_reset_device() {
+
+    if (!spi_init) {
+        printf("rfid_reset_device() ERROR: SPI not initialized\n");
+        return;
+    }
+
+    // Reset the device
+    rfid_write(COMMAND_REG, 0x0F); // trigger reset
+    sleep_for_us(10);
+
+    // Send req
+    rfid_write(MODE_REG, 0x3D); // 0x3D is default mode
+    rfid_write(T_RELOAD_REG_L, 30);
+    rfid_write(T_RELOAD_REG_H, 0);
+    rfid_write(T_MODE_REG, 0x8D);
+    rfid_write(T_PRESCALER_REG, 0x3E);
+    rfid_write(TX_ASK_REG, 0x40);
+}
+
+void rfid_cleanup(void) {
+    return;
+}
+

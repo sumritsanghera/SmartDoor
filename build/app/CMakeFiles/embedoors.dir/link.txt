@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-gcc -g -fsanitize=address -pthread CMakeFiles/embedoors.dir/src/display_handler.c.o CMakeFiles/embedoors.dir/src/door_handler.c.o CMakeFiles/embedoors.dir/src/main.c.o CMakeFiles/embedoors.dir/src/pru.c.o CMakeFiles/embedoors.dir/src/udp_listener.c.o CMakeFiles/embedoors.dir/src/utils.c.o -o embedoors  ../hal/libhal.a -lm 

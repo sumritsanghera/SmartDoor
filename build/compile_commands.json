@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/buzzer.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/buzzer.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/buzzer.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/display.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/display.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/display.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/joystick.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/joystick.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/joystick.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/motion_sensor.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/motion_sensor.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/motion_sensor.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/neopixel.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/neopixel.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/neopixel.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/servo.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/servo.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/servo.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/hal",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/hal/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/hal.dir/src/uptime.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/uptime.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/src/uptime.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/display_handler.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/display_handler.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/display_handler.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/door_handler.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/door_handler.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/door_handler.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/main.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/main.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/main.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/pru.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/pru.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/pru.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/udp_listener.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/udp_listener.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/udp_listener.c"
+},
+{
+  "directory": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/build/app",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc  -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/include -I/home/sumrit/cmpt433/work/finalProject/cmpt433-project/hal/include -g -Werror -Wpedantic -Wextra -fdiagnostics-color -fsanitize=address -pthread -std=gnu11 -o CMakeFiles/embedoors.dir/src/utils.c.o -c /home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/utils.c",
+  "file": "/home/sumrit/cmpt433/work/finalProject/cmpt433-project/app/src/utils.c"
+}
+]
